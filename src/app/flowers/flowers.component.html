@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+  
+<div class="row">
+
+<div class="col-9">
+
+<div class = "row">
+<div class="col-6">
+  <h2>Available flowers</h2> 
+</div>
+<div class="col-6">
+  <span> <a class="nav-link" routerLink="/flowersAdd">Add Flower</a></span>
+</div>
+</div>
+
+  <table class="table table-dark">
+    <tr>
+      <th scope="col">
+        Flower Name
+      </th>
+      <th scope="col">
+        Image
+      </th>
+      <th scope="col">
+        Cost
+      </th>
+    </tr>
+
+    <tr *ngFor="let flower of flowers" (click) = onSelect(flower)>
+      <td>{{flower.flowerName}}</td>
+      <td><img class="image-thumbnail floralImage" src="{{flower.image}}" alt= "{{flower.flowerName}}" /></td>
+      <td>{{flower.costOfFlowers}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="col-3">
+  <div *ngIf="selectedFlower">
+    <h4>Selected flower is </h4>
+    <div><span>Flower Name : {{selectedFlower.flowerName}}</span></div>
+
+    <div>
+      <label>name: 
+    <input [(ngModel)] = "selectedFlower.discount" placeholder="discount" />
+  </label>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
