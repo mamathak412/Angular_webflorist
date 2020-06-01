@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class FlowerAddService {
 
-   private flowersUrl = 'http://135.253.163.44:9002/rest/webflorist/add/';  
+   private flowersUrl = 'http://135.253.163.44:9002/webflorist/add/';  
 
   constructor(private messageService : MessageService, private httpClient : HttpClient) { }
 
