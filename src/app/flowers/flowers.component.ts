@@ -20,7 +20,7 @@ export class FlowersComponent implements OnInit {
   @Input()
   customer : string;
 
-  private flowersUrl = 'http://localhost:8080/rest/webflorist/list';  
+  private flowersUrl = 'http://135.253.163.44:9002/webflorist/list';  
 
   constructor(private http: HttpClient) { }
 
@@ -36,5 +36,3 @@ export class FlowersComponent implements OnInit {
   getFlowers() : void {
     console.log("Inside component "+ this.flowers);
   }
-
-}
