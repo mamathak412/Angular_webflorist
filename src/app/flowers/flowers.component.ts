@@ -35,15 +35,6 @@ export class FlowersComponent implements OnInit {
 
   getFlowers() : void {
     console.log("Inside component "+ this.flowers);
-   this.http.get(this.flowersUrl)
-      .subscribe(response => {
-        let flowers = response.body;
-        for(let entry of flowers){
-          this.flower = new Flower( entry.flowerId, entry.flowerName, entry.noOfFlowers, 
-          entry.costOfFlowers, entry.discount);
-          this.flowers.push(this.flower);
-        }
-      } );
   }
 
 }
