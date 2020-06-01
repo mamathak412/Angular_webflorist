@@ -36,3 +36,4 @@ export class FlowersComponent implements OnInit {
   getFlowers() : void {
     console.log("Inside component "+ this.flowers);
   }
+}
