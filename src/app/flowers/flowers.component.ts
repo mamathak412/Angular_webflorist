@@ -22,7 +22,7 @@ export class FlowersComponent implements OnInit {
 
   private flowersUrl = 'http://135.253.163.44:9002/webflorist/list';  
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private flowerService: FlowerService) { }
 
   ngOnInit() {
       this.getFlowers();
@@ -35,5 +35,11 @@ export class FlowersComponent implements OnInit {
 
   getFlowers() : void {
     console.log("Inside component "+ this.flowers);
+    this.flowerService
+    .getFlowers()
+    .subscribe((data:any) => {
+      console.log(data);
+      this.flowers = data.data;
+    });
   }
 }
