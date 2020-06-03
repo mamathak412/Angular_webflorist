@@ -39,7 +39,7 @@ export class FlowersComponent implements OnInit {
     .getFlowers()
     .subscribe((data:any) => {
       console.log(data);
-      this.flowers = data.data;
+      this.flowers = data;
     });
   }
 }
